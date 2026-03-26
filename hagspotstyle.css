@@ -7,11 +7,32 @@ Group: Emily Y Adonai B. Diana M. Abdikarim M.
 h1{
 	text-align: center;
 	/*background-color: rgb(128,0,0);*/
-	color: black;
+	color: #333333;
 	font-family: Arial, sans-serif;
 }
+h2{
+	color: #333333;
+
+}
+h3{
+	color: #333333;
+}
 nav{
-	text-align: center;
+	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  	background-color: #333333;
+  	display: flex;
+  	justify-content: center;
+}
+nav li a{
+	display: block;
+	color: white;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+nav li a:hover{
+	background-color: rgb(128,0,0);
 }
 header{
 	text-align: center;
@@ -19,4 +40,12 @@ header{
 	color: white;
 	font-family: Arial, sans-serif;
 	font-size: 50pt;
+}
+p{
+	color: SteelBlue;
+	text-align: left;
+	font-family: Arial, sans-serif;
+	font-size: 15pt;
+
+
 }
