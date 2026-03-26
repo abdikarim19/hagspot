@@ -2,3 +2,21 @@
 hagspotstyle.css
 Group: Emily Y Adonai B. Diana M. Abdikarim M. 
 */
+
+/* Center the header and make it more readable*/
+h1{
+	text-align: center;
+	/*background-color: rgb(128,0,0);*/
+	color: black;
+	font-family: Arial, sans-serif;
+}
+nav{
+	text-align: center;
+}
+header{
+	text-align: center;
+	background-color: rgb(128,0,0);
+	color: white;
+	font-family: Arial, sans-serif;
+	font-size: 50pt;
+}
