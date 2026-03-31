@@ -13,7 +13,7 @@ session_start();
     <title>HagSpot | Augsburg University</title>
     <style>
         /* We added flexbox to the header so the buttons go to the right side */
-        header {
+        h1 {
             display: flex;
             justify-content: space-between;
             align-items: center;
