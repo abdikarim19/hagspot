@@ -1,0 +1,18 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "gondola.proxy.rlwy.net",
+            "port": 54206,
+            "driver": "MySQL",
+            "name": "HagSpot Railway",
+            "database": "railway",
+            "username": "root"
+        }
+    ]
+}
