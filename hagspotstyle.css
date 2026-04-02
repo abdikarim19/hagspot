@@ -25,6 +25,10 @@ nav{
   	display: flex;
   	justify-content: center;
 }
+.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
 nav a{
 	display: block;
 	color: white;
@@ -46,6 +50,26 @@ p{
 	text-align: left;
 	font-family: Arial, sans-serif;
 	font-size: 15pt;
+}
+.header-right {
+    display: flex;
+    gap: 10px;
+}
 
+/* Button style */
+.header-right a {
+    border: 2px solid white;
+    color: white;
+    padding: 6px 12px;
+	font-size: 12pt; 
+    text-decoration: none;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
 
+/* Hover effect */
+.header-right a:hover {
+    background-color: white;
+    color: rgb(128,0,0);
 }

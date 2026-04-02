@@ -125,10 +125,10 @@ $show = isset($_GET['form']) ? $_GET['form'] : 'login';
 </header>
 
 <nav>
-    <a href="index.php">Home</a>
+    <a href="index.html">Home</a>
     <a href="#">View Spaces</a>
     <a href="#">Bookings</a>
-    <a href="#">About</a>
+    <a href="about.html">About</a>
 </nav>
 
 <!-- Show message if there is one (like "Wrong password") -->
