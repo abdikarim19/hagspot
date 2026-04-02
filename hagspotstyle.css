@@ -18,20 +18,20 @@ h3{
 	color: #333333;
 }
 nav{
-	list-style-type: none;
+	
   	margin: 0;
   	padding: 0;
   	background-color: #333333;
   	display: flex;
   	justify-content: center;
 }
-nav li a{
+nav a{
 	display: block;
 	color: white;
 	padding: 14px 16px;
 	text-decoration: none;
 }
-nav li a:hover{
+nav a:hover{
 	background-color: rgb(128,0,0);
 }
 header{
