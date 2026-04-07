@@ -73,3 +73,10 @@ p{
     background-color: white;
     color: rgb(128,0,0);
 }
+
+/* Center the hagfors building image */
+img {
+	display: block;
+	margin: auto;
+	width: 50%;
+}
