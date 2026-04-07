@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "/Users/diana/Documents/CSC443/hagspot/index.html"
+            "file": "/Users/burkioo/Desktop/CSC443/hagspot/index.html"
         }
     ]
 }
