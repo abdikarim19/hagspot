@@ -11,7 +11,13 @@ h1{
 	font-family: Arial, sans-serif;
 }
 h2{
+	font-size: xx-large;
 	color: #333333;
+}
+.headerh2{
+	text-align: center;
+	font-size: xx-large;
+	color: steelblue;
 
 }
 h3{
@@ -51,6 +57,34 @@ p{
 	font-family: Arial, sans-serif;
 	font-size: 15pt;
 }
+#pafterSlide{
+	color:steelblue;
+	font-size: 25pt;
+	font-family: Arial, sans-serif;
+}
+
+/* Make button look more visually appealing */
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button:hover {
+  color: white;
+  background-color: rgb(128,0,0);
+}
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid  rgb(128,0,0);
+}
 .header-right {
     display: flex;
     gap: 10px;
@@ -83,4 +117,95 @@ img {
 #foot{
 	color: rgb(128,0,0);	
 
+}
+
+/* CSS for slide show */
+* {box-sizing: border-box}
+.mySlides {display: none}
+img {vertical-align: middle;}
+/* Slideshow Container */
+.slideshow-container{
+	max-width: 600px;
+	position: relative;
+	margin: 40px auto;
+}
+
+.slideshow-container img{
+	width: 100%;
+
+}
+/* Next & previous buttons */
+.prev, .next {
+color:black;	
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  background-color:gainsboro;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }

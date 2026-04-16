@@ -6,6 +6,7 @@
 <head>
 	<link href="hagspotstyle.css" rel="stylesheet" >
 	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>HagSpot | Augsburg University</title> <!-- title for our page-->
 </head>
 
@@ -33,11 +34,8 @@
 <!-- Description section for website-->
 <section class="hero">
     <h1>Welcome to HagSpot</h1>
-    <img src="images/hagforsbuilding.png" alt="Hagfors">
-    <p>
-        Book study rooms. Lab rooms. Meeting spaces.
-    </p>
-    <button>Browse Available Spaces</button> <!-- initial button for browing spaces(probably will be changed)-->
+    <img src="images/hagforsfrontbuilding.jpg" alt="Hagfors">
+   
 </section>
 
 <!-- SPACES SECTION  -->
@@ -49,59 +47,51 @@ we want to pull these from a database in the future.
 -->
 <section class="spaces">
 
-<h2>Popular Spaces</h2>
+<h2 class="headerh2">View Our Popular Spaces</h2>
 
 <div class="card-container">
-
-<!-- SPACE CARD 1 -->
-<div class="space-card">
-<h3>Study rooms on first floor 150-176</h3>
-<p>Capacity: 4-6 students</p>
-<p>Location: Hagfors Center</p>
-<button>View Availability</button>
-</div>
-
-<!-- SPACE CARD 2 -->
-<div class="space-card">
-    <h3>Study rooms on second floor 250-276</h3>
-    <p>Capacity: 4-6 students</p>
-    <p>Location: Hagfors Center</p>
-    <button>View Availability</button>
+<!-- Slideshow container-->    
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <div class="numbertext"> 1 / 4</div>
+        <img src="images/EntryHagfors.jpg" style="width:100%">
+        <div class="text">Entrance</div>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext"> 2 / 4</div>
+        <img src="images/cornnerRoomsHagfors.jpg" style="width:100%">
+        <div class="text">Corner Study Rooms</div>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext"> 3 / 4</div>
+        <img src="images/departmentstudyrooms.jpg" style="width:100%">
+        <div class="text">Department Study Rooms</div>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext"> 4 / 4</div>
+        <img src="images/labHagfors.jpg" style="width:100%">
+        <div class="text">Lab</div>
     </div>
 
-    <!-- SPACE CARD 3 -->
-<div class="space-card">
-    <h3>Study rooms on third floor 350-376</h3>
-    <p>Capacity: 4-6 students</p>
-    <p>Location: Hagfors Center</p>
-    <button>View Availability</button>
-    </div>
+    <!-- Next & previous buttons-->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
+    <a class="next" onclick="plusSlides(1)">&#10095;</a> 
 
-<!--  SPACE CARD 4  -->
-
-<div class="space-card">
-<h3> Major Specific Study Rooms </h3>
-<p>Capacity: 8-10 students</p>
-<p>Location: Hagfors Center</p>
-<button>View Availability</button>
 </div>
-
-<!-- SPACE CARD 5 -->
-<div class="space-card">
-    <h3> Extra Study areas </h3>
-    <p>Capacity: 2-4 students</p>
-    <p>Location: Hagfors Center</p>
-    <button>View Availability</button>
-    </div>
-<!--  SPACE CARD 6  -->
-
-<div class="space-card">
-<h3>Meeting Rooms </h3>
-<p>Capacity: 15-20 students or faculty</p>
-<p>Location: Hagfors Center</p>
-<button>View Availability</button> 
+<br>
+<!--Dots/circles on slide show-->
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
 </div>
-</div>
+    <p id="pafterSlide">
+        Book study rooms. Lab rooms. Meeting spaces.
+        <button class="button button1" onclick="window.location.href='viewSpaces.html'">Browse Available Spaces</button> <!-- initial button for browing spaces(probably will be changed)-->
+    </p>
+    
+
 </section>
 </main>
 <!-- footer for bottom of page-->
@@ -110,5 +100,7 @@ we want to pull these from a database in the future.
 <p id="foot">Augsburg University</p>
 <p id="foot">2211 Riverside Ave, Minneapolis, MN 55454</p>
 </footer>
+<script src="hagspot.js"></script>
+
 </body>
 </html>
