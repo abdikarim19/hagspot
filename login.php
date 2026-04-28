@@ -17,6 +17,23 @@ if (isset($_POST['register'])) {
     $email    = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); 
 
+    // Validate email format
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $_SESSION['msg'] = "Invalid email format.";
+        header("Location: login.php?form=register");
+        exit;
+    }
+
+    // Restrict to Augsburg email
+    if (!str_ends_with(strtolower($email), "augsburg.edu")){
+        $_SESSION["msg"] = "You must use an Augsburg email";
+        header("Location: login.php?form=register");
+        exit;
+    }
+
+
+    // Check if domain exists (IN PROGRESS)
+
     // Save the new user in the database
     $sql = "INSERT INTO users (full_name, email, password) VALUES ('$name', '$email', '$password')";
 
