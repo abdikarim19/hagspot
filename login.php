@@ -148,8 +148,8 @@ $show = isset($_GET['form']) ? $_GET['form'] : 'login';
 
 <nav>
     <a href="index.html">Home</a>
-    <a href="#">View Spaces</a>
-    <a href="#">Bookings</a>
+    <a href="viewSpaces.html">View Spaces</a>
+    <a href="bookings.html">Bookings</a>
     <a href="about.html">About</a>
 </nav>
 

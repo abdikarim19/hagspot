@@ -209,3 +209,249 @@ color:black;
   from {opacity: .4}
   to {opacity: 1}
 }
+
+/*
+View Spaces layout and interactive floor maps.
+The left column keeps the original room list, while the right column holds the map carousel.
+*/
+.view-spaces-page {
+	display: grid;
+	grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+	gap: 24px;
+	align-items: start;
+	max-width: 1400px;
+	margin: 30px auto;
+	padding: 0 20px;
+}
+
+.spaces-list {
+	display: grid;
+	gap: 16px;
+}
+
+.view-spaces-page .space-card {
+	border: 2px solid rgb(128,0,0);
+	border-radius: 6px;
+	padding: 16px;
+	background: white;
+}
+
+.view-spaces-page .space-card p {
+	margin: 6px 0;
+	font-size: 13pt;
+}
+
+.view-spaces-page .space-card button,
+.view-spaces-page .space-card select {
+	margin-top: 10px;
+}
+
+.floor-maps {
+	display: grid;
+	gap: 14px;
+}
+
+.floor-maps h2 {
+	margin: 0;
+	text-align: center;
+	color: steelblue;
+}
+
+.floor-map {
+	border: 2px solid #dddddd;
+	border-radius: 6px;
+	padding: 14px;
+	background: white;
+}
+
+/* Only one floor map should be visible at a time, so the carousel hides the inactive slides. */
+.map-carousel {
+	position: relative;
+}
+
+.map-slide {
+	display: none;
+}
+
+.map-slide.active {
+	display: block;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.map-carousel-controls,
+.map-carousel-arrows {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+/* The carousel buttons match the HagSpot maroon color so they feel like part of the site. */
+.map-carousel-controls button,
+.map-carousel-arrows button {
+	border: 2px solid rgb(128,0,0);
+	border-radius: 4px;
+	background: white;
+	color: #333333;
+	padding: 8px 12px;
+	cursor: pointer;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+}
+
+.map-carousel-controls button:hover,
+.map-carousel-controls button.active,
+.map-carousel-arrows button:hover {
+	background: rgb(128,0,0);
+	color: white;
+	text-decoration: none;
+}
+
+.floor-map h3 {
+	margin: 0 0 12px;
+	text-align: center;
+}
+
+.map-wrap {
+	position: relative;
+	width: 100%;
+}
+
+.floor-map-image {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0;
+}
+
+/*
+The room hotspots are transparent links layered on top of the map image.
+They are slightly larger than the room labels so they are easier to click.
+*/
+.room-hotspot {
+	position: absolute;
+	display: block;
+	width: 5%;
+	height: 4%;
+	transform: translate(-50%, -50%);
+	border: 2px solid transparent;
+	border-radius: 4px;
+	cursor: pointer;
+	background: rgba(70, 130, 180, 0);
+}
+
+/* Room 168 has a larger blue highlighted area, so its click target is wider too. */
+.room-hotspot-wide {
+	width: 9%;
+	height: 8%;
+}
+
+/* Hovering reveals the clickable area without permanently covering the floor map. */
+.room-hotspot:hover,
+.room-hotspot:focus {
+	border-color: rgb(128,0,0);
+	background: rgba(70, 130, 180, 0.18);
+	outline: none;
+}
+
+/* The tooltip pulls the room number from data-room, which keeps the HTML easy to update. */
+.room-hotspot::after {
+	content: "Room " attr(data-room);
+	position: absolute;
+	left: 50%;
+	bottom: 100%;
+	transform: translateX(-50%);
+	display: none;
+	white-space: nowrap;
+	padding: 5px 8px;
+	margin-bottom: 6px;
+	border-radius: 4px;
+	background: #333333;
+	color: white;
+	font-size: 13px;
+	font-family: Arial, sans-serif;
+}
+
+.room-hotspot:hover::after,
+.room-hotspot:focus::after {
+	display: block;
+}
+
+/* Percent positions keep the hotspots aligned even when the map image scales with the page. */
+.room-174 {
+	left: 12.7%;
+	top: 48.6%;
+}
+
+.room-168 {
+	left: 25.8%;
+	top: 58.1%;
+}
+
+.room-274 {
+	left: 56.9%;
+	top: 16.9%;
+}
+
+.room-227 {
+	left: 62.5%;
+	top: 62.4%;
+}
+
+.room-235 {
+	left: 86.8%;
+	top: 65.6%;
+}
+
+.room-324 {
+	left: 53.3%;
+	top: 60.3%;
+}
+
+.room-334 {
+	left: 86.6%;
+	top: 60.4%;
+}
+
+.room-377 {
+	left: 54.7%;
+	top: 16.9%;
+}
+
+/* On smaller screens, the room list and map carousel stack so neither side gets squeezed. */
+@media (max-width: 900px) {
+	.view-spaces-page {
+		grid-template-columns: 1fr;
+	}
+}
+
+/*
+Room image detail page.
+This is a lightweight in-site viewer for the room photos linked from the map hotspots.
+*/
+.room-detail-page {
+	max-width: 1100px;
+	margin: 30px auto;
+	padding: 0 20px;
+}
+
+.room-detail-image {
+	display: block;
+	width: 100%;
+	max-width: 1000px;
+	height: auto;
+	margin: 20px auto;
+	border: 2px solid #dddddd;
+	border-radius: 6px;
+}
+
+.room-detail-message,
+.room-detail-actions {
+	text-align: center;
+}
+
+.room-detail-actions a {
+	color: rgb(128,0,0);
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+}

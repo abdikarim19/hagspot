@@ -29,124 +29,185 @@
     <a href="bookings.html">Bookings</a>
     <a href="about.html">About</a>
 </nav>
-<main>
-<!-- SPACE CARD 1 -->
-<div class="space-card">
-<h3>Study rooms on first floor 150-176</h3>
-<p>Capacity: 4-6 students</p>
-<p>Location: Hagfors Center</p>
+<main class="view-spaces-page">
+<section class="spaces-list">
+    <!-- SPACE CARD 1 -->
+    <div class="space-card">
+        <h3>Study rooms on first floor 150-176</h3>
+        <p>Capacity: 4-6 students</p>
+        <p>Location: Hagfors Center</p>
 
-<!-- dropdown menu for selecting time slot -->
-<select class = "time-select">
-    <option value="9:00-10:00">9:00-10:00</option>
-    <option value="10:00-11:00">10:00-11:00</option>
-    <option value="11:00-12:00">11:00-12:00</option>
-    <option value="12:00-13:00">12:00-13:00</option>
-    <option value="13:00-14:00">13:00-14:00</option>
-    <option value="14:00-15:00">14:00-15:00</option>
-</select>
+        <!-- dropdown menu for selecting time slot -->
+        <select class="time-select">
+            <option value="9:00-10:00">9:00-10:00</option>
+            <option value="10:00-11:00">10:00-11:00</option>
+            <option value="11:00-12:00">11:00-12:00</option>
+            <option value="12:00-13:00">12:00-13:00</option>
+            <option value="13:00-14:00">13:00-14:00</option>
+            <option value="14:00-15:00">14:00-15:00</option>
+        </select>
 
-<button onclick="bookSpace(this)"> Reserve Space</button>
-<p class = "confirmation-message"></p>
-</div>
+        <button onclick="bookSpace(this)"> Reserve Space</button>
+        <p class="confirmation-message"></p>
+    </div>
 
-<!-- SPACE CARD 2 -->
-<div class="space-card">
-    <h3>Study rooms on second floor 250-276</h3>
-    <p>Capacity: 4-6 students</p>
-    <p>Location: Hagfors Center</p>
-    <!-- dropdown menu for selecting time slot -->
-<select class = "time-select">
-    <option value="9:00-10:00">9:00-10:00</option>
-    <option value="10:00-11:00">10:00-11:00</option>
-    <option value="11:00-12:00">11:00-12:00</option>
-    <option value="12:00-13:00">12:00-13:00</option>
-    <option value="13:00-14:00">13:00-14:00</option>
-    <option value="14:00-15:00">14:00-15:00</option>
-</select>
+    <!-- SPACE CARD 2 -->
+    <div class="space-card">
+        <h3>Study rooms on second floor 250-276</h3>
+        <p>Capacity: 4-6 students</p>
+        <p>Location: Hagfors Center</p>
 
-<button onclick="bookSpace(this)"> Reserve Space</button>
-<p class = "confirmation-message"></p>
-</div>
+        <!-- dropdown menu for selecting time slot -->
+        <select class="time-select">
+            <option value="9:00-10:00">9:00-10:00</option>
+            <option value="10:00-11:00">10:00-11:00</option>
+            <option value="11:00-12:00">11:00-12:00</option>
+            <option value="12:00-13:00">12:00-13:00</option>
+            <option value="13:00-14:00">13:00-14:00</option>
+            <option value="14:00-15:00">14:00-15:00</option>
+        </select>
+
+        <button onclick="bookSpace(this)"> Reserve Space</button>
+        <p class="confirmation-message"></p>
+    </div>
 
     <!-- SPACE CARD 3 -->
-<div class="space-card">
-    <h3>Study rooms on third floor 350-376</h3>
-    <p>Capacity: 4-6 students</p>
-    <p>Location: Hagfors Center</p>
-    <!-- dropdown menu for selecting time slot -->
-<select class = "time-select">
-    <option value="9:00-10:00">9:00-10:00</option>
-    <option value="10:00-11:00">10:00-11:00</option>
-    <option value="11:00-12:00">11:00-12:00</option>
-    <option value="12:00-13:00">12:00-13:00</option>
-    <option value="13:00-14:00">13:00-14:00</option>
-    <option value="14:00-15:00">14:00-15:00</option>
-</select>
+    <div class="space-card">
+        <h3>Study rooms on third floor 350-376</h3>
+        <p>Capacity: 4-6 students</p>
+        <p>Location: Hagfors Center</p>
 
-<button onclick="bookSpace(this)"> Reserve Space</button>
-<p class = "confirmation-message"></p>
+        <!-- dropdown menu for selecting time slot -->
+        <select class="time-select">
+            <option value="9:00-10:00">9:00-10:00</option>
+            <option value="10:00-11:00">10:00-11:00</option>
+            <option value="11:00-12:00">11:00-12:00</option>
+            <option value="12:00-13:00">12:00-13:00</option>
+            <option value="13:00-14:00">13:00-14:00</option>
+            <option value="14:00-15:00">14:00-15:00</option>
+        </select>
+
+        <button onclick="bookSpace(this)"> Reserve Space</button>
+        <p class="confirmation-message"></p>
     </div>
 
-<!--  SPACE CARD 4  -->
+    <!-- SPACE CARD 4 -->
+    <div class="space-card">
+        <h3> Major Specific Study Rooms </h3>
+        <p>Capacity: 8-10 students</p>
+        <p>Location: Hagfors Center</p>
 
-<div class="space-card">
-<h3> Major Specific Study Rooms </h3>
-<p>Capacity: 8-10 students</p>
-<p>Location: Hagfors Center</p>
-<!-- dropdown menu for selecting time slot -->
-<select class = "time-select">
-    <option value="9:00-10:00">9:00-10:00</option>
-    <option value="10:00-11:00">10:00-11:00</option>
-    <option value="11:00-12:00">11:00-12:00</option>
-    <option value="12:00-13:00">12:00-13:00</option>
-    <option value="13:00-14:00">13:00-14:00</option>
-    <option value="14:00-15:00">14:00-15:00</option>
-</select>
+        <!-- dropdown menu for selecting time slot -->
+        <select class="time-select">
+            <option value="9:00-10:00">9:00-10:00</option>
+            <option value="10:00-11:00">10:00-11:00</option>
+            <option value="11:00-12:00">11:00-12:00</option>
+            <option value="12:00-13:00">12:00-13:00</option>
+            <option value="13:00-14:00">13:00-14:00</option>
+            <option value="14:00-15:00">14:00-15:00</option>
+        </select>
 
-<button onclick="bookSpace(this)"> Reserve Space</button>
-<p class = "confirmation-message"></p>
-</div>
-
-<!-- SPACE CARD 5 -->
-<div class="space-card">
-    <h3> Extra Study areas </h3>
-    <p>Capacity: 2-4 students</p>
-    <p>Location: Hagfors Center</p>
-    <!-- dropdown menu for selecting time slot -->
-<select class = "time-select">
-    <option value="9:00-10:00">9:00-10:00</option>
-    <option value="10:00-11:00">10:00-11:00</option>
-    <option value="11:00-12:00">11:00-12:00</option>
-    <option value="12:00-13:00">12:00-13:00</option>
-    <option value="13:00-14:00">13:00-14:00</option>
-    <option value="14:00-15:00">14:00-15:00</option>
-</select>
-
-<button onclick="bookSpace(this)"> Reserve Space</button>
-<p class = "confirmation-message"></p>
+        <button onclick="bookSpace(this)"> Reserve Space</button>
+        <p class="confirmation-message"></p>
     </div>
-<!--  SPACE CARD 6  -->
 
-<div class="space-card">
-<h3>Meeting Rooms </h3>
-<p>Capacity: 15-20 students or faculty</p>
-<p>Location: Hagfors Center</p>
-<!-- dropdown menu for selecting time slot -->
-<select class = "time-select">
-    <option value="9:00-10:00">9:00-10:00</option>
-    <option value="10:00-11:00">10:00-11:00</option>
-    <option value="11:00-12:00">11:00-12:00</option>
-    <option value="12:00-13:00">12:00-13:00</option>
-    <option value="13:00-14:00">13:00-14:00</option>
-    <option value="14:00-15:00">14:00-15:00</option>
-</select>
+    <!-- SPACE CARD 5 -->
+    <div class="space-card">
+        <h3> Extra Study areas </h3>
+        <p>Capacity: 2-4 students</p>
+        <p>Location: Hagfors Center</p>
 
-<button onclick="bookSpace(this)"> Reserve Space</button>
-<p class = "confirmation-message"></p>
-</div>
-</div>
+        <!-- dropdown menu for selecting time slot -->
+        <select class="time-select">
+            <option value="9:00-10:00">9:00-10:00</option>
+            <option value="10:00-11:00">10:00-11:00</option>
+            <option value="11:00-12:00">11:00-12:00</option>
+            <option value="12:00-13:00">12:00-13:00</option>
+            <option value="13:00-14:00">13:00-14:00</option>
+            <option value="14:00-15:00">14:00-15:00</option>
+        </select>
+
+        <button onclick="bookSpace(this)"> Reserve Space</button>
+        <p class="confirmation-message"></p>
+    </div>
+
+    <!-- SPACE CARD 6 -->
+    <div class="space-card">
+        <h3>Meeting Rooms </h3>
+        <p>Capacity: 15-20 students or faculty</p>
+        <p>Location: Hagfors Center</p>
+
+        <!-- dropdown menu for selecting time slot -->
+        <select class="time-select">
+            <option value="9:00-10:00">9:00-10:00</option>
+            <option value="10:00-11:00">10:00-11:00</option>
+            <option value="11:00-12:00">11:00-12:00</option>
+            <option value="12:00-13:00">12:00-13:00</option>
+            <option value="13:00-14:00">13:00-14:00</option>
+            <option value="14:00-15:00">14:00-15:00</option>
+        </select>
+
+        <button onclick="bookSpace(this)"> Reserve Space</button>
+        <p class="confirmation-message"></p>
+    </div>
 </section>
+
+<aside class="floor-maps" aria-label="Hagfors floor maps">
+    <h2>Floor Maps</h2>
+
+    <!-- These buttons let students switch floors without making the page taller with three full maps. -->
+    <div class="map-carousel-controls" aria-label="Choose a floor map">
+        <button type="button" class="map-floor-button active" data-map-slide="0">First</button>
+        <button type="button" class="map-floor-button" data-map-slide="1">Second</button>
+        <button type="button" class="map-floor-button" data-map-slide="2">Third</button>
+    </div>
+
+    <!--
+        Each carousel slide keeps the same structure:
+        one map image, then transparent room links positioned over the blue highlighted rooms.
+        The map itself stays as an image, which keeps the floor plan easy to replace later.
+    -->
+    <div class="map-carousel">
+    <section class="floor-map map-slide active">
+        <h3>First Floor</h3>
+        <div class="map-wrap">
+            <img class="floor-map-image" src="images/FirstFloorHagforsFinal.png" alt="First floor Hagfors Center map">
+            <!-- Room 174 uses the clearer second photo for now, so the URL passes 174-2. -->
+            <a class="room-hotspot room-174" href="room.html?room=174-2" data-room="174" aria-label="View room 174"></a>
+            <a class="room-hotspot room-168 room-hotspot-wide" href="room.html?room=168" data-room="168" aria-label="View room 168"></a>
+        </div>
+    </section>
+
+    <section class="floor-map map-slide">
+        <h3>Second Floor</h3>
+        <div class="map-wrap">
+            <img class="floor-map-image" src="images/SecondFloorHagforsFinal.png" alt="Second floor Hagfors Center map">
+            <a class="room-hotspot room-274" href="room.html?room=274" data-room="274" aria-label="View room 274"></a>
+            <!-- Room 227 currently routes to the general department study room image. -->
+            <a class="room-hotspot room-227" href="room.html?room=227" data-room="227" aria-label="View room 227"></a>
+            <!-- Room 235 is treated as a corner room until a room-specific photo is added. -->
+            <a class="room-hotspot room-235" href="room.html?room=235" data-room="235" aria-label="View room 235"></a>
+        </div>
+    </section>
+
+    <section class="floor-map map-slide">
+        <h3>Third Floor</h3>
+        <div class="map-wrap">
+            <img class="floor-map-image" src="images/ThirdFloorHagforsFinal.png" alt="Third floor Hagfors Center map">
+            <a class="room-hotspot room-324" href="room.html?room=324" data-room="324" aria-label="View room 324"></a>
+            <!-- Rooms 334 and 377 use the shared corner room photo for the current demo. -->
+            <a class="room-hotspot room-334" href="room.html?room=334" data-room="334" aria-label="View room 334"></a>
+            <a class="room-hotspot room-377" href="room.html?room=377" data-room="377" aria-label="View room 377"></a>
+        </div>
+    </section>
+    </div>
+
+    <!-- Previous/Next gives a simple carousel feel in addition to the direct floor buttons above. -->
+    <div class="map-carousel-arrows" aria-label="Map carousel controls">
+        <button type="button" onclick="changeMapSlide(-1)">Previous</button>
+        <button type="button" onclick="changeMapSlide(1)">Next</button>
+    </div>
+</aside>
 </main>
 <!-- footer for bottom of page-->
 <footer>

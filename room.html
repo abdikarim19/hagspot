@@ -1,0 +1,121 @@
+<!-- room.html -->
+<!-- Larger room image view for HagSpot map links -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="hagspotstyle.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Room View | HagSpot</title>
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        Augsburg University
+    </div>
+
+    <div class="header-right">
+        <a href="login.php">Log in</a>
+        <a href="login.php?form=register">Register</a>
+    </div>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="viewSpaces.html">View Spaces</a>
+    <a href="bookings.html">Bookings</a>
+    <a href="about.html">About</a>
+</nav>
+
+<main class="room-detail-page">
+    <!-- JavaScript fills these in based on the room number in the URL. -->
+    <h1 id="room-title">Room View</h1>
+    <img id="room-photo" class="room-detail-image" src="" alt="">
+    <p id="room-message" class="room-detail-message"></p>
+    <p class="room-detail-actions">
+        <a href="viewSpaces.html">Back to View Spaces</a>
+    </p>
+</main>
+
+<footer>
+    <p> HagSpot | Augsburg University Space Booking System</p>
+</footer>
+
+<script>
+    /*
+        This page is intentionally simple: one reusable page can show several room photos.
+        The map links pass a room value in the URL, and this list decides which image to show.
+        When better room-specific photos are added later, only the image paths here need to change.
+    */
+    const roomImages = {
+        "168": {
+            title: "Room 168",
+            image: "images/Room168.jpeg",
+            alt: "Large view of room 168"
+        },
+        "174-2": {
+            title: "Room 174",
+            image: "images/Room174-2.jpeg",
+            alt: "Large view of room 174"
+        },
+        "227": {
+            title: "Department Study Room",
+            image: "images/departmentstudyrooms.jpg",
+            alt: "Large view of a department study room"
+        },
+        "235": {
+            title: "Corner Room 235",
+            image: "images/cornnerRoomsHagfors.jpg",
+            alt: "Large view of a corner room"
+        },
+        "274": {
+            title: "Room 274",
+            image: "images/Room274.jpeg",
+            alt: "Large view of room 274"
+        },
+        "324": {
+            title: "Room 324",
+            image: "images/Room324.jpeg",
+            alt: "Large view of room 324"
+        },
+        "334": {
+            title: "Corner Room 334",
+            image: "images/cornnerRoomsHagfors.jpg",
+            alt: "Large view of a corner room"
+        },
+        "337": {
+            title: "Corner Room 337",
+            image: "images/cornnerRoomsHagfors.jpg",
+            alt: "Large view of a corner room"
+        },
+        "377": {
+            title: "Corner Room 377",
+            image: "images/cornnerRoomsHagfors.jpg",
+            alt: "Large view of a corner room"
+        }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const room = params.get("room");
+    const roomInfo = roomImages[room];
+    const title = document.getElementById("room-title");
+    const photo = document.getElementById("room-photo");
+    const message = document.getElementById("room-message");
+
+    // If the room is recognized, show its image. Otherwise, keep the page friendly instead of breaking.
+    if (roomInfo) {
+        title.textContent = roomInfo.title;
+        photo.src = roomInfo.image;
+        photo.alt = roomInfo.alt;
+        message.textContent = "This is a larger view of the selected Hagfors space.";
+    } else {
+        title.textContent = "Room Image Not Available";
+        photo.style.display = "none";
+        message.textContent = "That room does not have an image yet.";
+    }
+</script>
+
+</body>
+</html>
