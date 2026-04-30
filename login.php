@@ -31,9 +31,14 @@ if (isset($_POST['register'])) {
         exit;
     }
 
-
     // Check if domain exists (IN PROGRESS)
-
+    $domain = substr(strrchr($email, "@"), 1);
+    // Check if domain has mail exchange records
+    if (!checkdnsrr($domain, "MX")) {
+        $_SESSION['msg'] = "Email domain is not valid.";
+        header("Location: login.php?form=register");
+        exit;
+    }
     // Save the new user in the database
     $sql = "INSERT INTO users (full_name, email, password) VALUES ('$name', '$email', '$password')";
 
