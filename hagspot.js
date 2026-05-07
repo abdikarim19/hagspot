@@ -115,17 +115,55 @@ function bookSpace(button) {
   // This gets the room/space name from the card title.
   let roomName = card.querySelector("h3").innerText;
 
-  console.log("User clicked Reserve for: " + roomName);
-  console.log("Selected time: " + time);
+   // Get today's date automatically
+  let today = new Date().toISOString().split("T")[0];
 
-  if (time === "") {
-    message.textContent = "Please select a time first.";
-    return;
-  }
+//Create a FormData object to send information to PHP
+  let formData = new FormData();
+// Add room name to the form data
+  formData.append("room", roomName);
+// Add booking date to the form data
+  formData.append("date", today);
+//Add selected time slot to the form data
+  formData.append("time", time);
 
-  message.textContent = "Booking successful for " + time + "!";
-  button.innerText = "Reserved";
-  button.disabled = true;
+// Send the booking information to book.php
+   fetch("book.php", {
+    method: "POST",
+    // Attach the form data
+    body: formData
+  })
+  .then(response => response.text())
+  .then(text => {
+  console.log("PHP response:", text);
+  let data = JSON.parse(text);
+     // Show success or error message on the page
+    message.textContent = data.message;
 
-  console.log("Booking confirmed for " + roomName + " at " + time);
+    if (data.success) {
+      button.innerText = "Reserved";
+      button.disabled = true;
+    }
+  })
+  // If there is an error connecting to the server
+  .catch(error => {
+    // Show error message
+    message.textContent = "Booking failed. Please try again.";
+    console.log(error);
+  });
 }
+
+  //console.log("User clicked Reserve for: " + roomName);
+  //console.log("Selected time: " + time);
+
+  //if (time === "") {
+    //message.textContent = "Please select a time first.";
+    //return;
+  //}
+
+  //message.textContent = "Booking successful for " + time + "!";
+  //button.innerText = "Reserved";
+  //button.disabled = true;
+
+  //console.log("Booking confirmed for " + roomName + " at " + time);
+

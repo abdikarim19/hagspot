@@ -13,8 +13,20 @@ header("Content-Type: application/json");
 
 //Check if the user is logged in
 if(!isset($_SESSION['user_name'])) {
-   echo json_encode(["message" => "Please log in first"]); 
+   echo json_encode([
+      "success" => false,
+      "message" => "Please log in first"
+   ]);
    exit;
+}
+
+// Check if booking data exists
+if (!isset($_POST['room'], $_POST['date'], $_POST['time'])) {
+    echo json_encode([
+        "success" => false,
+        "message" => "Missing booking information"
+    ]);
+    exit;
 }
 
 //Get the data sent from the hagspot.js
@@ -23,15 +35,23 @@ $date = $_POST['date'];
 $time = $_POST['time'];
 $user = $_SESSION['user_name'];
 
-//Inset the booking into the database
+// Insert booking into database
 $sql = "INSERT INTO bookings (room, booking_date, time_slot, user_name)
-        VALUES ('$room', '$date', '$time', '$user')";
+VALUES ('$room', '$date', '$time', '$user')";
 
-//Check if the booking worked
+// Run query
 if (mysqli_query($conn, $sql)) {
-    echo json_encode(["message" => "Booking successful"]);
-} else {
-    echo json_encode(["message" => "This time slot is already booked"]);
-}
 
+    echo json_encode([
+        "success" => true,
+        "message" => "Booking successful!"
+    ]);
+
+} else {
+
+    echo json_encode([
+        "success" => false,
+        "message" => mysqli_error($conn)
+    ]);
+}
 ?>
