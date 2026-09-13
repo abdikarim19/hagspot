@@ -41,6 +41,8 @@ a { color: inherit; text-decoration: none; }
 .map-frame > img { filter: saturate(.7) contrast(.95); object-fit: contain; padding: 1rem; }
 .map-marker { background: color-mix(in srgb, var(--quiet) 26%, transparent); border: 1px solid color-mix(in srgb, var(--quiet) 80%, var(--ink)); color: var(--ink); display: grid; font-family: Arial, sans-serif; font-size: .68rem; font-weight: 800; overflow: hidden; place-items: center; padding: .25rem; position: absolute; transition: background .2s, border .2s, transform .2s; z-index: 1; }
 .map-marker:hover, .map-marker.is-selected { border: 2px solid var(--ink); transform: scale(1.03); z-index: 2; }
+.heat-marker::after { border: 1px solid var(--marker-color); border-radius: inherit; content: ""; inset: -7px; opacity: .45; position: absolute; }
+.heat-marker.marker-active::after, .heat-marker.marker-busy::after, .heat-marker.marker-full::after { animation: heat-pulse 2.4s ease-out infinite; }
 .map-marker span { background: rgba(251, 250, 245, .85); padding: .12rem .25rem; }
 .marker-quiet { --marker-color: var(--quiet); background: color-mix(in srgb, var(--quiet) 34%, transparent); }
 .marker-active { --marker-color: var(--active); background: color-mix(in srgb, var(--active) 42%, transparent); }
@@ -80,6 +82,19 @@ a { color: inherit; text-decoration: none; }
 .booking-note { line-height: 1.4; margin: .65rem 0 0; }
 .booking-note a { color: var(--accent); text-decoration: underline; }
 .booking-message { color: var(--ink); line-height: 1.4; margin: .65rem 0 0; }
+.presence-count { color: var(--muted); font-family: Arial, sans-serif; font-size: .68rem !important; line-height: 1.4 !important; }
+.presence-count strong { color: var(--ink); font-size: .9rem; }
+.check-in-page { align-content: start !important; max-width: 38rem !important; padding-top: 8vh !important; }
+.check-in-panel { background: var(--panel); border: 1px solid var(--line); padding: 2rem; position: relative; }
+.check-in-art { align-items: center; background: var(--ink); color: var(--paper); display: flex; flex-direction: column; font-family: Arial, sans-serif; font-size: .64rem; font-weight: 800; gap: .2rem; height: 4.3rem; justify-content: center; position: absolute; right: 2rem; top: 2rem; width: 4.3rem; }
+.check-in-art span:last-child { color: var(--active); font-size: 1.1rem; }
+.check-in-panel h2 { font-size: 2.4rem; font-weight: 400; margin: 0 0 .6rem; max-width: 9ch; }
+.check-in-panel > p:not(.eyebrow):not(.check-in-privacy):not(.booking-message) { color: var(--muted); line-height: 1.5; max-width: 28rem; }
+.check-in-privacy { border-left: 2px solid var(--quiet); color: var(--muted); font-family: Arial, sans-serif; font-size: .7rem; line-height: 1.45; margin: 1.5rem 0; padding-left: .8rem; }
+.presence-actions { align-items: center; display: flex; gap: 1rem; justify-content: space-between; }
+.presence-actions .booking-message { margin: 0; }
+.back-link { color: var(--muted); display: inline-block; font-family: Arial, sans-serif; font-size: .68rem; margin-top: 1.5rem; text-decoration: underline; }
+@keyframes heat-pulse { 0%, 100% { opacity: .2; transform: scale(.98); } 50% { opacity: .65; transform: scale(1.04); } }
 .site-footer { border-top: 1px solid var(--line); color: var(--muted); display: flex; font-family: Arial, sans-serif; font-size: .65rem; justify-content: space-between; padding: 1.2rem 0 2rem; }
 main:not(.site-shell) { align-content: center; display: grid; gap: 1.25rem; margin: 0 auto; max-width: 54rem; min-height: 100vh; padding: 3rem; }
 main:not(.site-shell) h1 { font-size: 7rem; font-weight: 400; line-height: .9; margin: 0; max-width: 12ch; }
