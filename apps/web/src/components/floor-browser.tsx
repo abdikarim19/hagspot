@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { floors, spaces, type BrowseSpace } from "@/data/hagfors";
 import { BookingWidget } from "@/components/booking-widget";
 
@@ -106,8 +107,8 @@ export function FloorBrowser() {
             />
             {visibleSpaces.map((space) => (
               <button
-                aria-label={`Select ${space.name}`}
-                className={`map-marker marker-${space.occupancy} ${space.id === selectedSpaceId ? "is-selected" : ""}`}
+                aria-label={`Select ${space.name}, ${space.activeCheckIns ?? 0} people currently here`}
+                className={`map-marker marker-${space.occupancy} ${space.kind === "occupancy" ? "heat-marker" : ""} ${space.id === selectedSpaceId ? "is-selected" : ""}`}
                 key={space.id}
                 onClick={() => setSelectedSpaceId(space.id)}
                 style={{
@@ -157,7 +158,7 @@ function SpaceRow({ isSelected, onSelect, space }: { isSelected: boolean; onSele
   return (
     <button className={isSelected ? "space-row is-selected" : "space-row"} onClick={onSelect} type="button">
       <span className={`space-status marker-${space.occupancy}`} />
-      <span className="space-row-copy"><strong>{space.name}</strong><small>{space.kind === "bookable" ? `${space.capacity} seats` : "Open area"}</small></span>
+      <span className="space-row-copy"><strong>{space.name}</strong><small>{space.kind === "bookable" ? `${space.capacity} seats` : `${space.activeCheckIns ?? 0} here now`}</small></span>
       <span className="space-level">{occupancyLabels[space.occupancy]}</span>
     </button>
   );
@@ -170,8 +171,9 @@ function SpaceDetail({ space }: { space: BrowseSpace }) {
       <p className="eyebrow">{space.kind === "bookable" ? "Bookable room" : "Informal occupancy area"}</p>
       <h3>{space.name}</h3>
       <p>{space.description}</p>
+      {space.kind === "occupancy" ? <p className="presence-count"><strong>{space.activeCheckIns ?? 0}</strong> anonymous check-ins currently count toward this area.</p> : null}
       <div className="equipment-list">{space.equipment.map((item) => <span key={item}>{item}</span>)}</div>
-      {space.kind === "bookable" ? <BookingWidget space={space} /> : <button className="detail-action" type="button">How check-in works</button>}
+      {space.kind === "bookable" ? <BookingWidget space={space} /> : <Link className="detail-action" href={`/check-in?area=${space.id}`}>Check in at this area</Link>}
     </div>
   );
 }

@@ -11,6 +11,7 @@ export type BrowseSpace = {
   mapRegion: MapRegion;
   occupancy: OccupancyLevel;
   equipment: string[];
+  activeCheckIns?: number;
 };
 
 export type BrowseFloor = {
@@ -66,6 +67,7 @@ export const spaces: BrowseSpace[] = [
     description: "Informal tables beside the north windows. Check in on arrival.",
     mapRegion: { x: 54, y: 18, width: 25, height: 20 },
     occupancy: "active",
+    activeCheckIns: 3,
     equipment: ["Open tables", "Natural light"],
   },
   {
@@ -88,6 +90,7 @@ export const spaces: BrowseSpace[] = [
     description: "Open study area with long shared tables and soft seating.",
     mapRegion: { x: 65, y: 47, width: 21, height: 24 },
     occupancy: "quiet",
+    activeCheckIns: 0,
     equipment: ["Shared tables", "Power outlets"],
   },
   {
@@ -110,6 +113,7 @@ export const spaces: BrowseSpace[] = [
     description: "An informal zone with a view toward the main stairwell.",
     mapRegion: { x: 13, y: 59, width: 28, height: 19 },
     occupancy: "full",
+    activeCheckIns: 11,
     equipment: ["Open tables", "Power outlets"],
   },
 ];
