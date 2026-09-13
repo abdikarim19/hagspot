@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import { floors, spaces, type BrowseSpace } from "@/data/hagfors";
+import { BookingWidget } from "@/components/booking-widget";
 
 type SpaceFilter = "all" | "bookable" | "occupancy";
 
@@ -170,7 +171,7 @@ function SpaceDetail({ space }: { space: BrowseSpace }) {
       <h3>{space.name}</h3>
       <p>{space.description}</p>
       <div className="equipment-list">{space.equipment.map((item) => <span key={item}>{item}</span>)}</div>
-      <button className="detail-action" type="button">{space.kind === "bookable" ? "View availability" : "How check-in works"}</button>
+      {space.kind === "bookable" ? <BookingWidget space={space} /> : <button className="detail-action" type="button">How check-in works</button>}
     </div>
   );
 }
