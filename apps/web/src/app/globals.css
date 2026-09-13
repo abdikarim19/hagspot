@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #17231f;
+  --paper: #f3f0e8;
+  --accent: #d45735;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+main {
+  display: grid;
+  min-height: 100vh;
+  align-content: center;
+  gap: 1.25rem;
+  max-width: 54rem;
+  padding: 3rem;
+  margin: 0 auto;
+}
+
+h1 {
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+p {
+  max-width: 35rem;
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+main > p:first-child {
+  color: var(--accent);
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
