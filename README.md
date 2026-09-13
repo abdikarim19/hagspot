@@ -1,5 +1,7 @@
 # HagSpot
 
+The modern application is being built in `apps/web` through seven staged pull requests. See [the web app guide](apps/web/README.md) for setup and deployment instructions.
+
 
 
 ## Getting started
